@@ -1,0 +1,23 @@
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .form-group{
+        width: calc((100% - 20px) / 2);
+        display: flex;
+        flex-direction: column;
+
+        input, select{
+            height: 40px;
+            border-radius: 14px;
+            border: 2px solid #144284;
+            padding: 0 14px;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+    .form-group-lg{
+        width: 100%;
+    }
+}

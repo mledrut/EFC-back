@@ -73,3 +73,22 @@ VALUES
 (3, 2),
 (4, 3);
 
+
+
+
+
+-- REQUETES 
+
+SELECT lits.nom, marques.nom as marque, tailles.valeur as taille, lits.prix, lits.promo, lits.image  FROM lits
+
+INNER JOIN lits_marques
+ON lits.id = lits_marques.lit_id 
+INNER JOIN marques
+ON lits_marques.marque_id = marques.id
+
+INNER JOIN lits_tailles
+ON lits.id = lits_tailles.lit_id 
+INNER JOIN tailles
+ON lits_tailles.taille_id = tailles.id
+
+ORDER BY lits.nom;
