@@ -129,6 +129,11 @@ include("header.php");
 
             <input type="submit" value="Modifier les infos" class="btn">
         </form>
+
+        <form action="delete.php?id=<?= $data["id"]?>" method="post" class="delete-form">
+            <input type="hidden" name="name" value="<?= $data['id']; ?>">
+            <input type="submit" name="submit" value="Supprimer">
+        </form>
     <?php } ?>
     </div>
     
