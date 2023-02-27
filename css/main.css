@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+header {
+  background-color: #144284;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header .container .logo img {
+  height: 60px;
+}
+
+/*# sourceMappingURL=main.css.map */

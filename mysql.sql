@@ -5,8 +5,9 @@ USE literie3000;
 CREATE TABLE lits (
     id TINYINT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(50) NOT NULL,
-    prix DECIMAL(4,2) NOT NULL,
-    promo DECIMAL(4,2)
+    prix DECIMAL(6,2) NOT NULL,
+    promo DECIMAL(6,2),
+    image VARCHAR(200)
 );
 
 CREATE TABLE marques (
@@ -50,4 +51,25 @@ VALUES
 ('160x200'),
 ('180x200'),
 ('200x200');
+
+INSERT INTO lits (nom, prix, promo, image)
+VALUES
+('Matelas Transition', 759.00, 529.00, "transition.jpeg"),
+('Matelas Stan', 809.00, 709.00, "stan.jpeg"),
+('Matelas Teamasse', 759.00, 529.00, 'teamasse.jpeg'),
+('Matelas Coup de boule', 1019.00, 509.00, 'boule.jpeg');
+
+INSERT INTO lits_marques (lit_id, marque_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 1);
+
+INSERT INTO lits_tailles (lit_id, taille_id)
+VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 3);
 
