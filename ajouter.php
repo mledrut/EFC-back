@@ -16,9 +16,6 @@ $query_tailles = $db->query("SELECT * from tailles;");
 $tailles = $query_tailles->fetchAll(PDO::FETCH_ASSOC);
 
 if (!empty($_POST)) {
-    //Le formulaire est envoyé
-    // Utilisaton de la fonction strip_tag() pour supprimer d'eventuelles balises HTML (faille XSS)
-    // Utilisation de trim() pour supprimer d'éventuels espaces en début et en fin de chaine
     $nom = trim(strip_tags($_POST["nom"]));
     $marque = (int)$_POST["marque"];
     $taille = (int)$_POST["taille"];
@@ -31,7 +28,6 @@ if (!empty($_POST)) {
    
     $errors = [];
 
-    // Valider que le champ est bien renseigné
     if (empty($nom)) {
         $errors["nom"] = "Le nom du lit est obligatoire";
     }
@@ -45,7 +41,6 @@ if (!empty($_POST)) {
         $errors["prix"] = "Le prix du lit est obligatoire";
     }
 
-    //Empeche l'input number d'etre modifié dans la console
     if ($prix < 0) {
        $errors["prix"] = "Le prix ne peut pas être inférieur à zéro";
     }

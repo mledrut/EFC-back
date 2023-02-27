@@ -4,7 +4,7 @@ $dsn = "mysql:host=localhost;dbname=literie3000";
 $db = new PDO($dsn, "root", "root");
 
 $query = $db->query("
-SELECT lits.nom, marques.nom as marque, tailles.valeur as taille, lits.prix, lits.promo, lits.image  FROM lits
+SELECT lits.id, lits.nom, marques.nom as marque, tailles.valeur as taille, lits.prix, lits.promo, lits.image  FROM lits
 
 INNER JOIN lits_marques
 ON lits.id = lits_marques.lit_id 
@@ -41,7 +41,7 @@ include("header.php");
                             <p><?= $lit["taille"] ?></p>
                         </div>
                         <div class="actions">
-                            <button class="btn btn-blue" href="#">Modifier</button>
+                            <a href="modifier.php?id=<?= $lit["id"] ?>"><button class="btn btn-blue">Modifier</button></a>
                             <button class="btn btn-yellow" href="#">Supprimer</button>
                         </div>
                     </div>
