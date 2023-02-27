@@ -41,15 +41,25 @@ include("header.php");
                             <p><?= $lit["taille"] ?></p>
                         </div>
                         <div class="actions">
+                            <a href="lit.php?id=<?= $lit["id"] ?>"><button class="btn btn-yellow">Voir</button></a>
                             <a href="modifier.php?id=<?= $lit["id"] ?>"><button class="btn btn-blue">Modifier</button></a>
-                            <button class="btn btn-yellow" href="#">Supprimer</button>
+                            <!-- <button class="btn btn-yellow" href="#">Supprimer</button> -->
                         </div>
                     </div>
                 </div>
                 <div class="right">
                     <div class="prix">
+                        <?php if (empty($lit["promo"])) {
+                            ?>
+                            <p class="normal"><?= $lit["prix"] ?> €</p>
+                            <?php
+                        } else {
+                        ?>
+
                         <p class="off"><?= $lit["prix"] ?> €</p>
                         <p class="promo"><?= $lit["promo"] ?> €</p>
+
+                        <?php } ?>
                     </div>
                 </div>
             </li>

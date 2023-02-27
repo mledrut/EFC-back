@@ -1,6 +1,7 @@
 form{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 
     .form-group{
@@ -19,5 +20,10 @@ form{
     }
     .form-group-lg{
         width: 100%;
+    }
+
+    input[type="submit"]{
+        margin-bottom: 20px;
+
     }
 }

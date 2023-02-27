@@ -40,8 +40,8 @@ if (isset($_GET["id"])) {
         if ($prix && $prix < 0) {
            $errors["prix"] = "Le prix ne peut pas être inférieur à zéro";
         }
-        if ($promo && $promo < 0) {
-           $errors["promo"] = "La promo ne peut pas être inférieur à zéro ou inférieur au prix d'origine";
+        if (empty($promo)) {
+            $promo = NULL;
         }
     
         if (empty($errors)) {
@@ -127,12 +127,12 @@ include("header.php");
                 <input type="text" id="input-image" name="image" value="<?= $data["image"] ?>">
             </div>
 
-            <input type="submit" value="Modifier les infos" class="btn">
+            <input type="submit" value="Modifier les infos" class="btn btn-blue">
         </form>
 
         <form action="delete.php?id=<?= $data["id"]?>" method="post" class="delete-form">
             <input type="hidden" name="name" value="<?= $data['id']; ?>">
-            <input type="submit" name="submit" value="Supprimer">
+            <input class="btn btn-red" type="submit" name="submit" value="Supprimer">
         </form>
     <?php } ?>
     </div>

@@ -40,13 +40,14 @@ if (!empty($_POST)) {
     if (empty($prix)) {
         $errors["prix"] = "Le prix du lit est obligatoire";
     }
+    if (empty($promo)) {
+        $promo = NULL;
+    }
 
     if ($prix < 0) {
        $errors["prix"] = "Le prix ne peut pas être inférieur à zéro";
     }
-    if ($promo < 0 || $promo >= $prix) {
-       $errors["promo"] = "La promo ne peut pas être inférieur à zéro ou inférieur au prix d'origine";
-    }
+   
 
     if (empty($errors)) {
         $dsn = "mysql:host=localhost;dbname=literie3000";
@@ -145,7 +146,7 @@ include("header.php");
                 <input type="text" id="input-image" name="image" placeholder="test.webp pour le dev">
             </div>
 
-            <input type="submit" value="Ajouter le lit" class="btn">
+            <input type="submit" value="Ajouter le lit" class="btn btn-blue">
         </form>
     </div>
 </section>

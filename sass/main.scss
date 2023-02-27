@@ -1,4 +1,5 @@
 @import "form"; 
+@import "lit";
 
 body{
     margin: 0;
@@ -20,9 +21,11 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: 16px;
     font-weight: 500;
     border: none;
+    transition: all 0.2s ease-out;
 
     &:hover{
         cursor: pointer;
+        transform: translateY(-4px);
     }
 }
 
@@ -34,6 +37,10 @@ h1, h2, h3, h4, h5, h6, p{
 .btn-yellow{
     color: #144284;
     background-color: #FFCC4D;
+}
+.btn-red{
+    color: #FFF;
+    background-color: #871b1b;
 }
 
 .container{
@@ -60,6 +67,23 @@ header{
         .logo{
             img{
                 height: 60px;
+            }
+        }
+        nav{
+            ul{
+                padding-left: 0;
+                list-style: none;
+                a{
+                    color: #FFF;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 18px;
+                    transition: all 0.2s ease-out;
+
+                    &:hover{
+                        color: #FFCC4D;
+                    }
+                }
             }
         }
     }
@@ -114,6 +138,13 @@ header{
                     align-items: center;
                     .prix{
                         text-align: center;
+                        .normal{
+                            font-size: 40px;
+                            font-weight: 700;
+                            color: #144284;
+
+                        }
+
                         .off{
                             text-decoration: line-through;
                             color: #144284;
